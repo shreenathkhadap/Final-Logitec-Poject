@@ -626,14 +626,14 @@ def producttable(request):
                             for dbbillid22 in dbbillid2.each():
                                 dbbillid222=dbbillid22.val().get("bill_id")
                                 if billid11==dbbillid222:
-                                    database.child("Data").child("Mis").child("Confirmed").child(dbbillid11.key()).remove()
+                                    database.child("Data").child("Mis").child("Pending").child(dbbillid22.key()).remove()
                         if a: 
                             dbbillid3= database.child("Data").child("Mis").child("Cancle").get()
                             for dbbillid33 in dbbillid3.each():
                                 dbbillid333=dbbillid33.val().get("bill_id")
                                 #print("dbbillid333",dbbillid333)
                                 if billid11==dbbillid333:
-                                    database.child("Data").child("Mis").child("Confirmed").child(dbbillid11.key()).remove()
+                                    database.child("Data").child("Mis").child("Cancle").child(dbbillid33.key()).remove()
                         database.child("Data").child("Mis").child("Confirmed").push(dict1)
                         # print("pushed",billid11)    
                     
@@ -654,6 +654,7 @@ def producttable(request):
                     billid2=Pending1.get("bill_id")
                     #print(billid2)
                     a=True
+                    
                     if a:
                         dbbillid1= database.child("Data").child("Mis").child("Confirmed").get()
                         for dbbillid11 in dbbillid1.each():
@@ -826,13 +827,13 @@ def producttable(request):
                             for dbbillid22 in dbbillid2.each():
                                 dbbillid222=dbbillid22.val().get("bill_id")
                                 if billid44==dbbillid222:
-                                    database.child("Data").child("Mis").child("Confirmed").child(dbbillid11.key()).remove()
+                                    database.child("Data").child("Mis").child("Pending").child(dbbillid22.key()).remove()
                         if a: 
                             dbbillid3= database.child("Data").child("Mis").child("Cancle").get()
                             for dbbillid33 in dbbillid3.each():
                                 dbbillid333=dbbillid33.val().get("bill_id")
                                 if billid44==dbbillid333:
-                                    database.child("Data").child("Mis").child("Confirmed").child(dbbillid11.key()).remove()
+                                    database.child("Data").child("Mis").child("Cancle").child(dbbillid33.key()).remove()
                                     
 
 
