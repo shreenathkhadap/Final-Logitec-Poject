@@ -1,0 +1,536 @@
+<!-- <!DOCTYPE html>
+<html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+<style>
+    body {
+        text-align: center;
+        align-items: center;
+    }
+    
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 30px, 10%;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        background-color: #a4ebf3;
+        /* background-color: #24242A; */
+    }
+    
+    .navbar {
+        background-color: #a4ebf3;
+        border-radius: 30px;
+        font-family: 'Lexend Deca', sans-serif;
+    }
+    
+    .navbar li {
+        float: left;
+        list-style: none;
+        margin: 13px 20px;
+    }
+    
+    .navbar ul {
+        overflow: auto;
+    }
+    
+    .navbar li a {
+        padding: 3px 3px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        transition: all 0.3s ease 0s;
+    }
+    
+    .navbar li a:hover {
+        color: #0096FF;
+    }
+    
+    .logo {
+        cursor: pointer;
+        margin-left: 15px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .login li {
+        float: left;
+        list-style: none;
+        margin: 13px 20px;
+        font-family: 'Lexend Deca', sans-serif;
+        font-weight: bold;
+    }
+    
+    .login ul {
+        overflow: auto;
+    }
+    
+    .login li a {
+        padding: 3px 3px;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        font-family: 'Lexend Deca', sans-serif;
+        transition: all 0.3s ease 0s;
+    }
+    
+    .login li a:hover {
+        color: #0096FF;
+    }
+    
+    .line {
+        color: #0096FF;
+    }
+    /* .fix{
+
+
+  
+  
+  /* display: block; */
+    /* overflow: hidden; 
+
+}  */
+    
+    .text1 {
+        display: flex;
+        margin-top: 30px;
+        justify-content: center;
+        color: #242424;
+        /* vertical-align: middle; */
+        width: 73%;
+        margin-left: auto;
+        margin-right: auto;
+        text-decoration: none;
+        border: rgb(0, 0, 0) 2px solid;
+        /* border-width: 50px; */
+        border-radius: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .text1 li {
+        list-style: none;
+        padding: 50px;
+    }
+    
+    .text1 ul {
+        list-style: none;
+    }
+    
+    .img2 {
+        padding: 10px;
+    }
+    
+    button {
+        display: block;
+    }
+    
+    button {
+        /* position: absolute; */
+        /* top: 520px; */
+        border-radius: 20px;
+        /* left: 500px; */
+        border: none;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    
+    .button1 {
+        background-color: #c1f3fa;
+        color: #020202;
+        text-decoration: none;
+        border: 2px solid rgb(0, 0, 0);
+    }
+    
+    .button1:hover {
+        background-color: #8ccaf7;
+        color: rgb(0, 0, 0);
+    }
+    
+    .co {
+        flex: 1;
+        text-align: center;
+        margin-top: 10px;
+    }
+    
+    .co ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 2px 11px;
+        position: relative;
+    }
+    
+    .co a {
+        color: #020202;
+    }
+    
+    .box input[type="submit"]:hover {
+        background: #bbd6ff;
+    }
+    
+    .box {
+        width: 800px;
+        height: 950px;
+        border-radius: 25px;
+        margin-left: 24%;
+        /* margin-top: 2%;  */
+        margin-bottom: 50px;
+        /* position: absolute; */
+        /* transform: translate(-50%,-50%); */
+        /* background: #131111; */
+        /* box-shadow: black 10px, 10px; */
+        background-image: linear-gradient(40deg, #3082fc, rgb(212, 211, 211));
+        text-align: center;
+        background-position: center;
+        background-size: cover;
+        position: relative;
+        text-align: center;
+    }
+    
+    .box h1 {
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+    }
+    
+    .box input[type="text"],
+    .box input[type="password"],
+    .box input[type="number"],
+    .box input[type="phone"],
+    .box input[type="date"] {
+        border: 0;
+        background: white;
+        display: inline;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #2f79aa;
+        padding: 14px 40px;
+        width: 400px;
+        outline: none;
+        color: rgb(0, 0, 0);
+        border-radius: 24px;
+        transition: 0.25s;
+    }
+    
+    .box select {
+        border: 0;
+        background: white;
+        display: inline;
+        margin: 20px auto;
+        text-align: center;
+        align-items: center;
+        border: 2px solid #2f79aa;
+        /* padding: 10px 10px; */
+        /* height: 70px; */
+        width: 200px;
+        outline: none;
+        color: black;
+        border-radius: 24px;
+        transition: 0.25s;
+        text-align: center;
+    }
+    
+    label {
+        width: 240px;
+        display: inline-block;
+        text-align: left;
+    }
+    
+    .box input[type="text"]:focus,
+    .box input[type="password"]:focus {
+        width: 580px;
+        border-color: #1eafc2;
+    }
+    
+    .box input[type="submit"] {
+        border: 0;
+        background: white;
+        display: inline;
+        margin: 20px auto;
+        text-align: center;
+        border: 2px solid #286791;
+        padding: 14px 40px;
+        outline: none;
+        color: rgb(0, 0, 0);
+        border-radius: 24px;
+        transition: 0.25s;
+        cursor: pointer;
+    }
+    
+    .box input[type="submit"]:hover {
+        background: #a4ebf3;
+        color: black;
+    }
+    
+    option {
+        text-align: center;
+        align-items: center;
+    }
+</style>
+</head>
+
+<body style="background-color:  #ffffff;">
+    <header>
+        <img class="logo" src=/static/logo23.jpg alt="logo" height="50px" width="50px">
+
+        <nav class="navbar">
+
+            <ul>
+
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact us</a></li>
+
+
+            </ul>
+        </nav>
+        <div class="login">
+
+
+            <ul>
+
+
+                <li><a href="/prelogin">LOGIN</a></li>
+
+            </ul>
+
+        </div>
+    </header>
+
+
+
+    <hr>
+
+
+
+
+
+    <div class="co">
+
+        <ul>
+            <form class="box" action="/postconfirmbookingorder/" method="POST">
+                <label style="font-size: 210%; margin-left: 2%; margin-top: 30px;" for="fname"><b>Confirm Order</b></label><br><br> {% csrf_token %}
+
+                <label style="font-size: 130%; margin-left: 2%;" for="fname">BILL ID:</label>
+                <input type="text" name="bill_id" style="font-size: 18pt; height: 35px; width:240px; " value={{bill_id}} readonly><br>
+                
+<label style="font-size: 130%; margin-left: 2%;" for="fname">City(From) :</label>
+<input type="text" name="fromcity" style="font-size: 18pt; height: 35px; width:240px; " value={{fromcity}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Company Name :</label>
+<input type="text" name="company_name" style="font-size: 18pt; height: 35px; width:240px; " value={{company_name}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Docket Number :</label>
+<input type="text" name="docket_no" style="font-size: 18pt; height: 35px; width:240px; " value={{docket_no}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Date :</label>
+<input type="date" name="datee" style="font-size: 18pt; height: 35px; width:240px; " value={{datee}} readonly><br>
+
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Destination :</label>
+<input type="text" name="destination" style="font-size: 18pt; height: 35px; width:240px; " value={{destination}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Party Name :</label>
+<input type="text" name="partyname" style="font-size: 18pt; height: 35px; width:240px; " value={{partyname}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Number Of Packages :</label>
+<input type="text" name="noofpckg" style="font-size: 18pt; height: 35px; width:240px; " value={{noofpckg}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Description(Said to Contain) :</label>
+<input type="text" name="description" style="font-size: 18pt; height: 35px; width:240px; " value={{description}} readonly><br>
+<label style="font-size: 130%; margin-left: 2%;" for="fname">Invoice Number :</label>
+<input type="text" name="invoice_no" style="font-size: 18pt; height: 35px; width:240px; " value={{invoice_no}} readonly><br>
+<input type="submit" name="submit" value="Confirm Your Order"></a>
+</ul>
+
+</div>
+</form>
+</body>
+
+</html> -->
+
+
+<!-- break............................................................................................................... -->
+
+<!doctype html>
+<html lang="en">
+{% load static %}
+
+<head>
+    {% if msg1 %}
+    <script>
+        window.alert('{{msg1}}');
+    </script>
+    {% endif %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="postadminlogin.css"> -->
+    <title>Post Admin Login</title>
+</head>
+<style>
+    .navbar {
+        background-color: transparent !important;
+    }
+    
+    .navbar .navbar-nav {
+        margin: 0 auto;
+    }
+    
+    .navbar .nav-link {
+        font-size: 22px;
+        padding-right: 20px;
+    }
+    
+    .navbar .navbar-brand {
+        /* font-size: 20px !important; */
+        font-size: larger;
+    }
+    
+    .navbar .nav-item {
+        padding-right: 30px;
+    }
+    
+    .head {
+        padding-top: 8vw;
+        font-size: 5vw;
+    }
+    
+    .form-container {
+        background: #fff;
+        /* position: absolute; */
+        top: 35vh;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 6px 0px #000;
+    }
+</style>
+
+<body>
+    <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 200vh; padding-bottom: 20px;" class="start">
+
+        <div class="mynav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" style="font-size: 22px;" href="#">HariOm-Logistic</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex" action="/bookinglogin/" method="POST">
+                            <!-- <a  class="nav-link nav-item" href="">Login</a> -->
+
+                            <button type="submit" class="btn btn-danger btn-block  ">Logout</button>
+
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <h1 class="text-center py-4">Confirm Order</h1>
+            <p><i> User : {{user_id}}</i> </p>
+            <section class="container-fluid">
+
+                <section class="row  justify-content-center">
+
+                    <section class="col-12 col-lg-8 col-md-3">
+                        <form class="form-container py-5 px-5" action="/postconfirmbookingorder/" method="POST">
+                            {% csrf_token %}
+                            <input type="hidden" name="hiddenbookinguserid" value={{user_id}}>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" style="font-size: 20px;">BILL ID</label>
+                                <input type="text" name="bill_id" value={{bill_id}} readonly class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                                <!-- <small id="emailHelp" class="form-text text-muted">You Are Logging in As an Admin.</small> -->
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">City (from)</label>
+                                <input type="text" name="fromcity" class="form-control" id="exampleInputPassword1" value={{fromcity}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Company Name :</label>
+                                <input type="text" name="company_name" class="form-control" id="exampleInputPassword1" value={{company_name}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Docket Number :</label>
+                                <input type="text" name="docket_no" class="form-control" id="exampleInputPassword1" value={{docket_no}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Date :</label>
+                                <input type="date" name="datee" class="form-control" id="exampleInputPassword1" value={{datee}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Destination :</label>
+                                <input type="text" name="destination" class="form-control" id="exampleInputPassword1" value={{destination}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Party Name :</label>
+                                <input type="text" name="partyname" class="form-control" id="exampleInputPassword1" value={{partyname}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Number Of Packages :</label>
+                                <input type="text" name="noofpckg" class="form-control" id="exampleInputPassword1" value={{noofpckg}} readonly>
+                            </div>
+
+
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Description(Said to Contain)</label>
+                                <input type="text" name="description" class="form-control" id="exampleInputPassword1" value={{description}} readonly>
+                            </div>
+                            <div class="form-group py-3">
+                                <label for="exampleInputPassword1" style="font-size: 20px;">Invoice Number</label>
+                                <input type="text" name="invoice_no" class="form-control" id="exampleInputPassword1" value={{invoice_no}} readonly>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block mt-4 ">Confirm your order</button>
+                        </form>
+                    </section>
+                </section>
+            </section>
+
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

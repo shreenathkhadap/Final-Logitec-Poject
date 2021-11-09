@@ -1,0 +1,376 @@
+<!-- {% load static %} -->
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <!-- filter orders -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+
+   
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+    <title>Prelogin</title>
+</head>
+<!-- <script src="{% static "table2excel.js" %}"></script> -->
+<style>
+    .navbar {
+        background-color: transparent !important;
+    }
+    
+    .navbar .navbar-nav {
+        margin: 0 auto;
+    }
+    
+    .navbar .nav-link {
+        font-size: 22px;
+        padding-right: 20px;
+    }
+    
+    .navbar .navbar-brand {
+        /* font-size: 20px !important; */
+        font-size: larger;
+    }
+    
+    .navbar .nav-item {
+        padding-right: 30px;
+    }
+    
+    .head {
+        padding-top: 8vw;
+        font-size: 5vw;
+    }
+    
+    .form-container {
+        background: #fff;
+        /* position: absolute; */
+        top: 35vh;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 6px 0px #000;
+    }
+</style>
+
+<body>
+    <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 185vh; padding-bottom: 20px;" class="start">
+
+        <div class="mynav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" style="font-size: 22px;" href="#">Hariom Logistics</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/ ">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+
+                        </ul>
+                        <form class="d-flex" action="/adminlogin/" method="POST">
+                            <!-- <a class="nav-link nav-item" href="">Login</a> -->
+                            <button type="submit" class="btn btn-danger btn-block  ">Logout</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+
+            <div class="text-center pt-4 pb-2">
+                <h2><u>Admin Users</u></h2>
+            </div>
+            <b>Admin user:
+		    <input id="gfg" type="text"
+				placeholder="Search here">
+            <div class="my-1">
+
+                <table class="table table-hover container table-dark table-responsive py-0 px-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Address</th>
+                            <th scope="col">City </th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">State</th>
+                                <th scope="col">User ID</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="admin">
+                        {%for user in admindata%}
+                        <tr>
+                            {% for row in user.values %}
+                            <td>{{row}}</td>
+                            {% endfor %}
+
+                    </tbody>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <hr>
+                </div>
+
+            </div>
+            <div class="text-center pt-3 pb-2">
+                <h2><u>Booking Users</u></h2>
+            </div>
+            <b>booking user:
+		    <input id="gfg1" type="text"
+				placeholder="Search here">
+            <div class="my-1">
+
+                <table class="table table-hover container table-dark table-responsive py-0 px-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Address</th>
+                            <th scope="col">City </th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">State</th>
+                                <th scope="col">User ID</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="booking">
+                        {%for user in bookingdata%}
+                        <tr>
+                            {% for row in user.values %}
+                            <td> {{row}} </td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <hr>
+                </div>
+
+            </div>
+            <div class="text-center pt-5 pb-2">
+                <h2><u>Dispatch Users</u></h2>
+            </div>
+            <b>Dispatch user:
+		    <input id="gfg2" type="text"
+				placeholder="Search here">
+            <div class="my-1">
+
+                <table class="table table-hover container table-dark table-responsive py-0 px-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Address</th>
+                            <th scope="col">City </th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Pincode</th>
+                            <th scope="col">State</th>
+                                <th scope="col">User ID</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="dispatch">
+                        {%for user in dispatchdata%}
+                        <tr>
+                            {% for row in user.values %}
+                            <td>{{row}}</td>
+                            {% endfor %}
+                        </tr>
+
+                    </tbody>
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                    </tbody>
+                </table>
+
+                <div class="container">
+                    <hr>
+                </div>
+
+            </div>
+            <div class="text-center pt-5 pb-2">
+                <h2><u>MIS Users</u></h2>
+            </div>
+            <b>MIS user:
+		    <input id="gfg3" type="text"
+				placeholder="Search here">
+            <div class="my-1">
+
+                <table class="table table-hover container table-dark table-responsive py-0 px-0">
+                    <thead>
+                        <tr>
+                            <th scope="col">Address</th>
+                            
+                            <th scope="col">Email</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Phone Number</th>
+                            <th scope="col">Pincode</th>
+                            
+                                <th scope="col">User ID</th>
+
+
+
+                        </tr>
+                    </thead>
+                    <tbody id="mis">
+                        {%for user in misdata%}
+                        <tr>
+                            {% for row in user.values %}
+                            <td>{{row}}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                    </tbody>
+                </table>
+
+
+                <div class="container">
+                    <hr>
+                </div>
+            </div>
+            <div class="col-md-12 text-center">
+
+                <button type="button" class="btn btn-primary my-5 btn-lg mb-5"><a style="text-decoration: none; color: white;" href="/checkuserupdate">Click here to Update User Details</a></button>
+
+
+
+
+
+                <button type="button" class="btn btn-danger mx-5 my-5 btn-lg mb-5"><a style="text-decoration: none; color: white;" href="/deleteuser">Click here to Delete User</a></button>
+
+
+            </div>
+            {% comment %} <script>
+                $(document).ready( function () {
+
+                $.fn.dataTable.moment( 'MMM D, YYYY' );
+                $.fn.dataTable.moment( 'D-MMM-YY' );
+                $('#table_id').DataTable({
+                            dom: 'B<"clear">lfrtip',
+                buttons: {
+                    name: 'primary',
+                    buttons: [ 'copy', 'csv', 'excel', 'pdf' ]
+
+                    }}
+                );
+            } );
+            </script> {% endcomment %}
+
+            <!-- filter data -->
+            <!-- filter data admin -->
+
+            <script>
+	    
+			$(document).ready(function() {
+				$("#gfg").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#admin tr").filter(function() {
+						$(this).toggle($(this).text()
+						.toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+		    </script>
+
+            <!-- filter data booking -->
+
+            <script>
+	    
+			$(document).ready(function() {
+				$("#gfg1").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#booking tr").filter(function() {
+						$(this).toggle($(this).text()
+						.toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+		    </script>
+
+            <!-- filter data dispatch -->
+
+            <script>
+	    
+			$(document).ready(function() {
+				$("#gfg2").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#dispatch tr").filter(function() {
+						$(this).toggle($(this).text()
+						.toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+		    </script>
+
+            <!-- filter data MIS -->
+
+            <script>
+	    
+			$(document).ready(function() {
+				$("#gfg3").on("keyup", function() {
+					var value = $(this).val().toLowerCase();
+					$("#mis tr").filter(function() {
+						$(this).toggle($(this).text()
+						.toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+		    </script>
+
+            
+
+            <!-- Option 1: Bootstrap Bundle with Popper -->
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+            <!-- Option 2: Separate Popper and Bootstrap JS -->
+            <!--
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+          -->
+</body>
+
+</html>

@@ -1,0 +1,462 @@
+<!-- {% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+   
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Home</title>
+</head>
+<style>
+    /* .mynav{
+  background-image: linear-gradient(45deg , lightblue , white);
+  height: 200vw;
+
+} */
+    
+    .navbar {
+        background-color: transparent !important;
+    }
+    
+    .truckk {
+        margin-top: 200px;
+    }
+    
+    .navbar .navbar-nav {
+        margin-left: auto;
+    }
+    
+    .navbar .nav-link {
+        font-size: 22px;
+        padding-right: 20px;
+    }
+    
+    .navbar .navbar-brand {
+        /* font-size: 20px !important; */
+        font-size: larger;
+    }
+    
+    .navbar .nav-item {
+        padding-right: 30px;
+    }
+    
+    .head {
+        padding-top: 8vw;
+        font-size: 5vw;
+    }
+    
+    .button {
+        border-radius: 4px;
+        background-color: #1e69f4;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        /* align-items: center; */
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2vw;
+        padding: 1vw;
+        width: 12vw;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+    
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #bedff1;
+        color: rgba(13, 34, 224, 0.979);
+        font-size: 80px;
+    }
+</style>
+
+<body>
+    <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 100vh; padding-bottom: 20px;" class="start">
+
+        <div class="mynav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" style="font-size: 22px;" href="#">HARIOM CARGO & COURIER</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <h1 class="text-center head my-4"> <i>HARIOM CARGO & COURIER</i></h1>
+           
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-primary my-3  btn-lg mx-5" onclick='location.href={% url 'bookinglogin' %}'>Booking User Login</button>
+                <button type="button" class="btn btn-primary my-3  btn-lg mx-5" onclick='location.href={% url 'dispatchlogin' %}'>Dispatch Login</button>
+                <button type="button" class="btn btn-primary my-3  btn-lg mx-5" onclick='location.href={% url 'mislogin' %}'>MIS Login</button>
+                <button type="button" class="btn btn-primary my-3  btn-lg mx-5" onclick='location.href={% url 'adminlogin' %}'>Admin Login</button>
+
+            </div>
+        </div>
+
+        <div class="container truckk col-xxl-8 px-4  ">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src={% static "truckop.png" %} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6 my-3">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 my-5" style="color:#221ef4c5 ; font-size:40px"><i>Best in Business</i></h1>
+                    <p class="lead" style="color:#221ef4c5 ; font-size:23px"><b><i>Logistics management aims at increasing the overall efficiency of organization. It fastens all inbound and outbound logistics activities to accomplish the project within the stipulated time. Best quality materials are acquired at lowest possible cost and utilize efficiently with minimum wastage. Logistic managers monitor all operations and avoids any overheads which enhance the overall efficiency.</i></b></p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-primary btn-lg px-4 me-md-2" onclick='location.href="{% url 'adminlogin' %}"'>Go to Admin Login</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light p-5 rounded mt-3">
+            <h1 style="color:#221ef4c5 ; font-size:40px"><b>Quality Service</b></h1>
+            <p class="lead" style="color:#221ef4c5 ; font-size:30px"><i><b>Process of logistic management has an efficient role in on-time delivery of products. It monitors all inbound and outbound movement of goods by selecting a team of professional members. Products are safely and rapidly shipped to deliver them at a right time, at right place and in right manner.</b></i></p>
+
+        </div>
+
+        <style>
+            footer a {
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }
+            
+            footer a:hover {
+                color: rgb(255, 255, 255)
+            }
+            
+            footer {
+                color: rgb(255, 255, 255);
+            }
+        </style>
+        <footer class="bg-secondary">
+            <div class="container py-4 ">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h4>Adderss</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur?</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Useful Links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Contact</h4>
+                        <p><strong>Email: </strong>email@email.com</p>
+                        <p><strong>Phone: </strong> 0000000000</p><br>
+
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Feedback</h4>
+                        <p>use contact us</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+     
+</body>
+
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Home</title>
+</head>
+<style>
+    /* .mynav{
+  background-image: linear-gradient(45deg , lightblue , white);
+  height: 40vw;
+
+} */
+    
+    .navbar {
+        background-color: transparent !important;
+    }
+    
+    .truckk {
+        margin-top: 200px;
+    }
+    
+    .navbar .navbar-nav {
+        margin-left: auto;
+    }
+    
+    .navbar .nav-link {
+        font-size: 22px;
+        padding-right: 20px;
+    }
+    
+    .navbar .navbar-brand {
+        /* font-size: 20px !important; */
+        font-size: larger;
+    }
+    
+    .navbar .nav-item {
+        padding-right: 30px;
+    }
+    
+    .head {
+        padding-top: 7vw;
+        font-size: 5vw;
+        padding-bottom: 0%;
+    }
+    
+    .button {
+        border-radius: 4px;
+        background-color: #1e69f4;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        /* align-items: center; */
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 2vw;
+        padding: 1vw;
+        width: 12vw;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+    
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+    
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+    
+    .button:hover span {
+        padding-right: 25px;
+    }
+    
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+</style>
+
+<body>
+    <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 100vh; padding-bottom: 20px;" class="start">
+
+        <div class="mynav">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 px-5">
+                <div class="container-fluid">
+                    <a class="navbar-brand" style="font-size: 22px;" href="#">HARIOM CARGO & COURIER</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 ">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="#">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">About</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider">
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Contact Us</a>
+                            </li>
+
+                        </ul>
+
+                    </div>
+                </div>
+            </nav>
+            <h1 class="text-center head  "> &bull; HARIOM CARGO & COURIER &bull;</h1>
+            <p class="text-center  my-0 mx-0" style="font-size: large; margin-bottom: 3%;">-A new era of Transportation-</p>
+            <!-- <button class="button text-center"><span>Hover </span></button> -->
+            <div class="col-md-12 text-center">
+                <button type="button" class="btn btn-primary my-5  btn-lg mx-5" onclick='location.href={% url 'bookinglogin' %}'>Booking User Login</button>
+                <button type="button" class="btn btn-primary my-5  btn-lg mx-5" onclick='location.href={% url 'dispatchlogin' %}'>Dispatch Login</button>
+                <button type="button" class="btn btn-primary my-5  btn-lg mx-5" onclick='location.href={% url 'mislogin' %}'>MIS Login</button>
+                <button type="button" class="btn btn-primary my-5  btn-lg mx-5" onclick='location.href={% url 'adminlogin' %}'>Admin Login</button>
+
+            </div>
+        </div>
+
+        <div class="container truckk col-xxl-8 px-4  ">
+            <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+                <div class="col-10 col-sm-8 col-lg-6">
+                    <img src={% static "truckop.png" %} class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+                </div>
+                <div class="col-lg-6 my-5">
+                    <h1 class="display-5 fw-bold lh-1 mb-3 my-5">Best in Business</h1>
+                    <p class="lead">Logistics management aims at increasing the overall efficiency of organization. It fastens all inbound and outbound logistics activities to accomplish the project within the stipulated time. Best quality materials are acquired at lowest possible cost and utilize efficiently with minimum wastage. Logistic managers monitor all operations and avoids any overheads which enhance the overall efficiency.</p>
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+                        <button type="button" class="btn btn-info btn-lg px-4 me-md-2" onclick='location.href={% url 'adminlogin' %}'>Go to Admin</button>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light p-5 rounded mt-3">
+            <h1>Quality Service</h1>
+            <p class="lead">Process of logistic management has an efficient role in on-time delivery of products. It monitors all inbound and outbound movement of goods by selecting a team of professional members. Products are safely and rapidly shipped to deliver them at a right time, at right place and in right manner.</p>
+            
+        </div>
+
+        <style>
+            footer a {
+                color: rgb(255, 255, 255);
+                text-decoration: none;
+            }
+            
+            footer a:hover {
+                color: rgb(255, 255, 255)
+            }
+            
+            footer {
+                color: rgb(255, 255, 255);
+            }
+        </style>
+        <footer class="bg-secondary">
+            <div class="container py-4 ">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <h4>Adderss</h4>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Pariatur?</p>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Useful Links</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="">Home</a></li>
+                            <li><a href="">About</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Contact</h4>
+                        <p><strong>Email: </strong>email@email.com</p>
+                        <p><strong>Phone: </strong> 0000000000</p><br>
+
+                    </div>
+                    <div class="col-lg-3">
+                        <h4>Feedback</h4>
+                        <p>use contact us</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer>
+        <!-- Optional JavaScript; choose one of the two! -->
+
+        <!-- Option 1: Bootstrap Bundle with Popper -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+
+        <!-- Option 2: Separate Popper and Bootstrap JS -->
+        <!--
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>

@@ -1,0 +1,344 @@
+<!-- <!doctype html>
+{% load static %}
+<html lang="en">
+
+    {%if msg%}
+    <script>
+        window.alert('{{msg}}');
+    </script>
+    {% endif%}
+
+  <head>
+    <script src={% static "cities.js" %}></script>
+ 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    
+    <title>Admin Register</title>
+  </head>
+  <style>
+      .navbar{
+    background-color: transparent !important ;
+}
+.navbar .navbar-nav{
+    margin: 0 auto;
+   
+}
+.navbar .nav-link {
+    font-size: 22px;
+    
+    padding-right: 20px;
+}
+.navbar .navbar-brand{
+    /* font-size: 20px !important; */
+   font-size: larger;
+}
+.navbar .nav-item{
+    padding-right: 30px;
+}
+
+.head{
+    padding-top: 8vw;
+    font-size: 5vw;
+    
+}
+.form-container{
+    background:#fff;
+    
+    top: 35vh;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px #000;
+
+}
+  </style>
+  <body>
+    <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 200vh; padding-bottom: 20px;" class="start">
+
+      <div class="mynav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-5">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-size: 22px;" href="#">HariOm-Logistics</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/ ">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  
+                </ul>
+
+
+
+
+    <form action="/confirmdispatch/" method="POST">
+        {% csrf_token %}
+        <div class="co">
+        <caption><strong>DISPATCH ORDERS</strong></caption> <br>
+                <caption><strong>User Confirming the Orders : {{hiddenuserid1}}</strong></caption>
+                <input type="hidden" name="hiddenuserid2" value="{{hiddenuserid1}}">
+        
+            <div class="container">
+            <table border='1' width="50%" id="table" class="table table-dark text-white table-hover table-responsive ">
+                
+                <thead>
+                    <tr>
+                        <th>Bill ID</th>
+                        <th>From City</th>
+                        <th>Company Name</th>
+                        <th>Date</th>
+                        <th>Destinaton</th>
+                        <th>Party Name</th>
+                        <th>Invoice Number</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in list1 %}
+                    <tr>
+                        {% for row in user.values %}
+                        <td>{{row}}</td>
+
+                        {% endfor %}
+
+
+
+                    </tr>
+                    {% endfor %}
+
+
+
+
+                </tbody>
+            </table>
+            </div>
+            <br><br>
+            <div class="container">
+                <label> Bill_ID Selected :</label><input type="text" name="bill_id" id="billid" required readonly/><br><br>
+
+            </div>
+            <button type=submit class="anybutton">Submit</button>
+
+
+            <script>
+                var table = document.getElementById('table');
+
+                for (var i = 1; i < table.rows.length; i++) {
+                    table.rows[i].onclick = function() {
+                        
+                        document.getElementById("billid").value = this.cells[0].innerHTML;
+
+                    };
+                }
+            </script>
+
+
+
+    </form>
+</body>
+
+</html> -->
+
+
+
+
+<!doctype html>
+{% load static %}
+<html lang="en">
+
+    {%if msg%}
+    <script>
+        window.alert('{{msg}}');
+    </script>
+    {% endif%}
+
+  <head>
+    <script src={% static "cities.js" %}></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="postadminlogin.css"> -->
+    <title>Admin Register</title>
+  </head>
+  <style>
+      .navbar{
+    background-color: transparent !important ;
+}
+.navbar .navbar-nav{
+    margin: 0 auto;
+   
+}
+.navbar .nav-link {
+    font-size: 22px;
+    
+    padding-right: 20px;
+}
+.navbar .navbar-brand{
+    /* font-size: 20px !important; */
+   font-size: larger;
+}
+.navbar .nav-item{
+    padding-right: 30px;
+}
+
+.head{
+    padding-top: 8vw;
+    font-size: 5vw;
+    
+}
+.form-container{
+    background:#fff;
+    
+    top: 35vh;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 6px 0px #000;
+
+}
+  </style>
+  <body>
+  <div style="background-image: linear-gradient(45deg ,lightblue ,white) ; height: 100vh; padding-bottom: 20px;" class="start">
+
+      <div class="mynav">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light py-3 px-5">
+            <div class="container-fluid">
+              <a class="navbar-brand" style="font-size: 22px;" href="#">Hariom Logistic</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/index.html">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">About</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Services
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  
+                </ul>
+                <form class="d-flex" action="/dispatchlogin/" method="POST">
+                    <button type=submit class="btn btn-danger ">Logout</button>
+                  
+                </form>
+              </div>
+            </div>
+          </nav>
+
+
+
+    <form action="/confirmdispatch/" method="POST">
+        {% csrf_token %}
+        <div class="co">
+        <h1 class="text-center my-3"><strong><u> DISPATCH ORDERS</u></strong></h1> 
+                <h5 class="text-center"x>User Confirming the Orders : {{hiddenuserid1}}</h5>
+                <input type="hidden" name="hiddenuserid2" value="{{hiddenuserid1}}">
+                <input type="hidden" name="destination" value="{{destination}}">
+            <div class="container">
+                <hr>
+            </div>
+            <div class="container">
+            <table border='1' width="50%" id="table" class="table table-dark text-white table-hover table-responsive ">
+                
+                <thead>
+                    <tr>
+                        <th>Bill ID</th>
+                        <th>From City</th>
+                        <th>Company Name</th>
+                        <th>Date</th>
+                        <th>Destinaton</th>
+                        <th>Party Name</th>
+                        <th>Invoice Number</th>
+
+
+
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for user in list1 %}
+                    <tr>
+                        {% for row in user.values %}
+                        <td>{{row}}</td>
+
+                        {% endfor %}
+
+
+
+                    </tr>
+                    {% endfor %}
+
+
+
+
+                </tbody>
+            </table>
+            </div>
+            <br><br>
+            <div class="container text-center">
+                <label class="text-center"><h4><strong>Bill_ID Selected : &nbsp;</strong></h4> </label><input class="form-control" type="text" width="200px" name="bill_id" id="billid" required readonly/><br><br>
+
+            </div>
+            <div class="text-center">
+
+                <button type=submit class="btn btn-dark ">Submit</button>
+            </div>
+
+
+            <script>
+                var table = document.getElementById('table');
+
+                for (var i = 1; i < table.rows.length; i++) {
+                    table.rows[i].onclick = function() {
+                        //rIndex = this.rowIndex;
+                        document.getElementById("billid").value = this.cells[0].innerHTML;
+
+                    };
+                }
+            </script>
+
+
+
+    </form>
+</body>
+
+</html>
