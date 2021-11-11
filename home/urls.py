@@ -10,6 +10,7 @@ urlpatterns = [
      path("adminlogin/",views.adminlogin,name= 'adminlogin'),
      path("dispatchlogin/",views.dispatchlogin,name= 'dispatchlogin'),
      path("mislogin/",views.mislogin,name= 'mislogin'),
+     path("courierlogin/",views.courierlogin,name= 'courierlogin'),
      path("bookinglogin/",views.bookinglogin,name= 'bookinglogin'),
      path("registeradmin/" , views.registeradmin , name='registeradmin'),
      path("registerbooking/" , views.registerbooking , name='registerbooking'),
@@ -29,6 +30,7 @@ urlpatterns = [
      path("lh1/" , views.lh1 ,name='lh1' ),
      path("lh2/" , views.lh2 ,name='lh2' ),
      path("lh3/" , views.lh3 ,name='lh3' ),
+     path("lh4/" , views.lh4 ,name='lh4' ),
      path("postloginadmin/" , views.postloginadmin ,name='postloginadmin' ),
      path("postloginbooking/" , views.postloginbooking ,name='postloginbooking' ),
      path("postloginmis/" , views.postloginmis ,name='postloginmis' ),
@@ -40,6 +42,9 @@ urlpatterns = [
      path("postcheckuserupdate/" , views.postcheckuserupdate ,name='postcheckuserupdate' ),
      path("postdeleteuser/" , views.postdeleteuser ,name='postuserdelete' ),
      path("deleteuser/" , views.deleteuser ,name='deleteuser' ),
+   
+     path("courierorder/" , views.courierorder ,name='courierorder' ),
+     path("confirmedcourierorder/" , views.confirmedcourierorder,name='confirmedcourierorder' ),
    
      path("postbookingorder/" , views.postbookingorder ,name='postbookingorder' ),
      path("postconfirmbookingorder/" , views.postconfirmbookingorder ,name='postconfirmbookingorder' ),

@@ -60,6 +60,12 @@ def registerdispatch (request) :
     return render(request , "registerdispatch.html")    
 def registermis (request) :
     return render(request , "registermis.html")
+def lh4(request) :
+    return render(request , "lh4.html")
+def courierorder(request) :
+    return render(request , "courierorder.html")
+def confirmedcourierorder(request) :
+    return render(request , "confirmedcourierorder.html")
 def lh3render(request):
     user_id=request.POST.get('hiddenuserid3')
     return render (request , "lh3.html" , {'user_id':user_id})
@@ -215,6 +221,38 @@ def postloginadmin (request) :
     if flag==0:       
         msg="Invalid Credentials!!Please ChecK your Data"
         return render(request,"adminlogin.html",{"msg":msg}) 
+
+
+
+def courierlogin (request) :
+    email = request.POST.get('username')
+    passwd =  request.POST.get('password')
+    user_id = request.POST.get('userid')
+    print(user_id)
+    firebase=FirebaseApplication("https://neemeesh-trial-default-rtdb.firebaseio.com/", None)
+    result=firebase.get('/Data/Signup/Courier', None) 
+    flag=0
+    tempmail='0'
+    msg='0'
+    for userid,user in result.items():
+        if email==user['Email'] :    
+            flag=1
+            # if there is no error then signin the user with given email and password
+            try:
+                user=authe.sign_in_with_email_and_password(email,passwd)
+                session_id=user['idToken']
+                request.session['uid']=str(session_id)
+                
+                return render(request , 'lh4.html',{"user_id":user_id})
+            except:
+                tempmail=email
+                msg="Invalid Password!!"
+                return render(request,"courierlogin.html",{"msg":msg,"tempmail":tempmail})   
+    if flag==0:       
+        msg="Invalid Credentials!!Please ChecK your Data"
+        return render(request,"courierlogin.html",{"msg":msg}) 
+
+
 def postloginbooking(request) :
     email=request.POST.get('username')
     passwd =request.POST.get('password1')
@@ -943,6 +981,7 @@ def dispatchuser1 (request) :
 def postdispatchuser (request) :
     fromcity = request.POST.get("cityname")
     destination = request.POST.get("destination")
+    userid1 = request.POST.get("hiddenuserid")
     booking_db1 = database.child("Data").child("BookingOrder").child("Orders").get()
     list1=[]
     temp=[]
@@ -960,7 +999,7 @@ def postdispatchuser (request) :
                                      }]
                         temp.append(bill_id)
                         billid.append(bill_id)
-    return render (request , "dispatchuser.html", {'list1' : list1 , "temp" : temp ,"destination" :destination
+    return render (request , "dispatchuser.html", {'list1' : list1 , "temp" : temp ,"destination" :destination,"hiddenuserid1":userid1
     })
 
 def confirmdispatch(request):  
