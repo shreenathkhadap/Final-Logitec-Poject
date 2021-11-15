@@ -63,7 +63,14 @@ def registermis (request) :
 def lh4(request) :
     return render(request , "lh4.html")
 def courierorder(request) :
-    return render(request , "courierorder.html")
+    db1=db.child("Data").child("ConfirmedOrders").child("OrderDetails").child("dummydispatch").get()
+    userid=request.post.get("hiddenuserid5")
+
+    for i in db1.each() :
+        if(i.val()['courier']==userid) :
+          
+            return render(request , "courierorder.html",{"courierdetails":i.val()})
+    
 def confirmedcourierorder(request) :
     return render(request , "confirmedcourierorder.html")
 def lh3render(request):
@@ -253,6 +260,29 @@ def courierlogin (request) :
         return render(request,"courierlogin.html",{"msg":msg}) 
 
 
+def postcourieruser (request) :
+    
+    # destination = request.POST.get("destination")
+    courier = request.POST.get("hiddenuserid")
+    booking_db1 = database.child("Data").child("BookingOrder").child("Orders").get()
+    list1=[]
+    temp=[]
+    billid =[]
+    for bookingdb in booking_db1.each() :
+                bill_id=database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("bill_id").get().val()
+                if (bookingdb.val()["courier"] == courier and bill_id  not in temp) :   
+                        list1=list1+[{"bill_id": database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("bill_id").get().val(),
+                                     'from_city' : database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("fromcity").get().val(),
+                                     'companyname12' :database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("company_name").get().val(),
+                                     'datee' : database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("date").get().val(),
+                                     'destination' : database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("destination").get().val(),
+                                     'partyname' : database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("partyname").get().val(),
+                                     'invcno' : database.child("Data").child("BookingOrder").child("Orders").child(bookingdb.key()).child("invcno").get().val()
+                                     }]
+                        temp.append(bill_id)
+                        billid.append(bill_id)
+    return render (request , "dispatchuser.html", {'list1' : list1 , "temp" : temp ,"destination" :destination,"hiddenuserid1":userid1
+    })
 def postloginbooking(request) :
     email=request.POST.get('username')
     passwd =request.POST.get('password1')
@@ -978,6 +1008,7 @@ def dispatchuser1 (request) :
 #                         billid.append(bill_id)
 #     return render (request , "dispatchuser.html", {'list1' : list1 , "temp" : temp , "hiddenuserid1":userid1})
 
+
 def postdispatchuser (request) :
     fromcity = request.POST.get("cityname")
     destination = request.POST.get("destination")
@@ -1060,6 +1091,7 @@ def postconfirmdispatch (request) :
                 }
             print(data)    
             database.child("Data").child("ConfirmedOrders").child("OrderDetails").child(userid).push(data)
+            database.child("Data").child("ConfirmedOrders").child("OrderDetails").child("dummydispatch").push(data)
            
 
     for deletedispatch in dbdispatch.each():

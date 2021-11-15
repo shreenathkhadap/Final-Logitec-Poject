@@ -1,1 +1,70 @@
-<h1>courierorder</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Your Selected Orders</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.5/firebase-database.js"></script>
+    <div class="container">
+        <h1>View Your Dispatched Orders</h1>
+        <h2>Welcome User {{user_id}}</h2>
+        <!-- <input type="hidden" name="hiddenuserid5" value={{user_id}}>  -->
+    </div>
+    <div class="container">
+        <table border="1" class="table table-dark text-white" id="table">
+            <thead>
+                <tr>
+                    <th>Bill ID</th>
+                    <th>Company Name</th>
+                    <th>User Confirmed Order</th>
+                    <th>Date</th>
+                    <th>Destination</th>
+                    <th>From</th>
+                    <th>Invoice Number</th>
+                    <th>Party</th>
+                </tr>
+
+
+            </thead>
+            <tbody>
+                {% for user in courierdetails %}
+                <tr>
+                    {% for row in user.values %}
+                    <td>{{row}}</td>
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+        <form action="/postviewcourieruser/" method="POST">
+            {% csrf_token %}
+            <label> Bill_ID Selected :</label>
+            <input type="text" name="bill_id" id="billid" required readonly/><br><br>
+            <input type="hidden" name="hiddenuserid5" value={{user_id}}>
+            <button type=submit class="anybutton">Submit</button>
+        </form>
+    </div>
+    <script>
+        var table = document.getElementById('table');
+
+        for (var i = 1; i < table.rows.length; i++) {
+            table.rows[i].onclick = function() {
+                //rIndex = this.rowIndex;
+                document.getElementById("billid").value = this.cells[0].innerHTML;
+
+            };
+        }
+    </script>
+
+</body>
+
+</html>
