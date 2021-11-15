@@ -2,7 +2,7 @@
 from django import contrib
 from django.shortcuts import redirect, render, HttpResponse
 from datetime import datetime 
-from firebase import firebase
+
 from requests import post,get
 from firebase.firebase import FirebaseApplication, FirebaseAuthentication
 from django.contrib import messages
